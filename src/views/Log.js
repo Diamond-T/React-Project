@@ -4,17 +4,17 @@ export default class Log extends Component {
     render() {
         return (
             <form>
-                <container>
-            
+               
+            <div className="col-lg-8 offset-lg-2">
                             <h3>Sign In</h3>
             
-                            <div className="form-group">
+                            
                                 
                                 <label>Email address</label>
                                 <input type="email" className="form-control" placeholder="Enter email" />
                             </div>
             
-                            <div className="form-group">
+                            <div className="col-lg-8 offset-lg-2">
                                 <label>Password</label>
                                 <input type="password" className="form-control" placeholder="Enter password" />
                             </div>
@@ -25,13 +25,14 @@ export default class Log extends Component {
                                     
                                 </div>
                             </div>
-            
+                            <div className="col-lg-8 offset-lg-2">
                             <button type="submit" className="btn btn-primary btn-block">Submit</button>
                             <p className="forgot-password text-right">
                                 
                             </p>
-                            </container>
+                        </div>    
                         </form>
+                        
                     );
                 }
             }
