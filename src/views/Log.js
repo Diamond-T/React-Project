@@ -4,6 +4,7 @@ export default class Log extends Component {
     render() {
         return (
             <form>
+                
                
             <div className="col-lg-8 offset-lg-2">
                             <h3>Sign In</h3>
