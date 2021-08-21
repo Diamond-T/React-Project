@@ -19,10 +19,13 @@ export default class Nav extends Component {
                 <Link class="nav-link" to="/SignUp">Sign Up</Link>
               </li>
               <li class="nav-item">
-                <Link class="nav-link" to="/products">Products </Link>
+                <Link class="nav-link" to="/Products">Products </Link>
               </li>
-           
+              <li className="nav-item">
+                            <Link className="nav-link" to="/users">Users</Link>
+                            </li>
             </ul>
+            
           </div>
           <div className="auth-wrapper">
         <div className="auth-inner">

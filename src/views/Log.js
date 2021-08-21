@@ -11,9 +11,11 @@ export default class Log extends Component {
             
                             
                                 
-                                <label>Email address</label>
-                                <input type="email" className="form-control" placeholder="Enter email" />
+                                <label>Username</label>
+                                <input type="email" className="form-control" placeholder="Enter UserName" />
                             </div>
+                            <div className="col-lg-8 offset-lg-2"></div>
+
             
                             <div className="col-lg-8 offset-lg-2">
                                 <label>Password</label>
@@ -27,12 +29,19 @@ export default class Log extends Component {
                                 </div>
                             </div>
                             <div className="col-lg-8 offset-lg-2">
-                            <button type="submit" className="btn btn-primary btn-block">Submit</button>
+                            
                             <p className="forgot-password text-right">
-                                
+                            
                             </p>
                         </div>    
                         </form>
+                        
+
+
+
+
+
+
                         
                     );
                 }
