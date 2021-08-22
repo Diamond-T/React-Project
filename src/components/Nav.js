@@ -21,13 +21,11 @@ export default class Nav extends Component {
               <li class="nav-item">
                 <Link class="nav-link" to="/Products">Products </Link>
               </li>
-              <li class="nav-item">
-                <Link class="nav-link" to="/cart">Cart </Link>
-              </li>
+              
 
-              <li className="nav-item">
-                            <Link className="nav-link" to="/users">Users</Link>
-                            </li>
+              <li class="nav-item">
+                <Link class="nav-link" to="/Cart">Cart </Link>
+              </li>
             </ul>
             
           </div>

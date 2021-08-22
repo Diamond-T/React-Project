@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import UserInfo from '../components/UserInfo';
+
+
 
 export default class Users extends Component {
     constructor(props){
@@ -10,7 +11,7 @@ export default class Users extends Component {
     }
 
     componentDidMount(){
-        fetch('http://localhost:5000/api/users')
+        fetch('https://cart-api-66.herokuapp.com/users')
             .then(r => r.json())
             .then(data => {
                 console.log(data);

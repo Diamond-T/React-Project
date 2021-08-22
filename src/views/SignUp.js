@@ -33,6 +33,8 @@ export default class SignUp extends Component {
         myHeaders.append("Content-Type", "application/json");
        
         const requestBody = JSON.stringify({
+            "lastname": lastname,
+            "firstname": firstname,
             "username": username,
             "email": email,
             "password": password 
