@@ -5,7 +5,7 @@ export default class SignUp extends Component {
         return (
             <form>
                 
-                
+                //
 
                 <div className="col-lg-8 offset-lg-2"><h3>Sign Up</h3>
                     <label>First name</label>
