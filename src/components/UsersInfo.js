@@ -1,16 +1,54 @@
 import React, { Component } from 'react'
 
-export default class Users extends Component {
-    render() {
-        console.log(this.props.user);
-        const user = this.props.user;
+export default class UsersInfo extends Component {
+    render() {handlePostSubmit = (synthEvent) => {
+        synthEvent.preventDefault();
+        console.log(synthEvent);
+        const title = synthEvent.target.title.value;
+        const body = synthEvent.target.body.value;
+
+        console.log(title, body)
+
+        let myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        const raw = JSON.stringify({
+        "title": title,
+        "body": body,
+        });
+
+        const requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw
+        };
+
+        fetch("https://cart-api-66.herokuapp.com/users", requestOptions)
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('error', error));
+
+    }
+
+    render() 
         return (
-            <div className='col-12 col-sm-6 col-md-4'>
-                <div className='card my-3'>
-                    <h5 className='card-title text-center'>{user.username}</h5>
-                    <a href={`mailto:${user.email}`} className='btn btn-primary mx-5'>Email</a>
-                </div>
+            <div>
+                <h4>Create A Post</h4>
+                <form onSubmit={this.handlePostSubmit}>
+                    <div className='form-group'>
+                        <fieldset>
+                            <label htmlFor='title'>Title</label>
+                            <input type='text' className='form-control' name='title' placeholder='Title'></input>
+                        </fieldset>
+                        <fieldset>
+                            <label htmlFor='body'>Body</label>
+                            <input type='text' className='form-control' name='body' placeholder='Body'></input>
+                        </fieldset>
+                        <button type='submit' className='btn btn-outline-secondary mt-3'>Create Post</button>
+                    </div>
+                </form>
             </div>
         )
     }
+
 }

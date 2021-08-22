@@ -16,6 +16,7 @@ export default class App extends Component {
   render() {
     return (
       
+      
       <div>
         <Nav/>
         <Switch>
@@ -25,8 +26,7 @@ export default class App extends Component {
           <Route exact path = '/Products' render ={ ()=> <Products/>}/>
 
           
-
-
+        
           
         </Switch> 
         

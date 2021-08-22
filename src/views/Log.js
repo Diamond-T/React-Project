@@ -35,7 +35,7 @@ export default class Log extends Component {
                             <div className="col-lg-8 offset-lg-2">
                             
                             <p className="forgot-password text-right">
-                            
+                            <a  href="/Products" class="btn btn-primary">submit</a>
                             </p>
                         </div>    
                         </form>
