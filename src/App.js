@@ -4,8 +4,9 @@ import {Switch, Route} from'react-router-dom';
 import Home from './views/Log';
 import About from'./views/Log';
 import SignUp from './views/SignUp';
-import Products from './components/Products';
-import NewPost from './components/NewPost';
+import Products from './views/Products';
+
+
 
 
 
