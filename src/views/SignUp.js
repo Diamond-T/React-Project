@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 export default class SignUp extends Component {
     constructor(props){
         super(props);
@@ -12,8 +12,8 @@ export default class SignUp extends Component {
     handleSubmit = (e) =>{
         e.preventDefault();
         console.log(e);
-        const firstname = e.target.firstname.value;
-        const lastname = e.target.lastna.value;
+        const firstname = e.target.first_name.value;
+        const lastname = e.target.last_name.value;
         const username = e.target.username.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
@@ -24,7 +24,7 @@ export default class SignUp extends Component {
       
 
         console.log(username, email, password, firstname,lastname);
-        if (password !== password){
+        if (!password === password){
             console.log("These passwords don't match")
             return
         }
@@ -33,8 +33,8 @@ export default class SignUp extends Component {
         myHeaders.append("Content-Type", "application/json");
        
         const requestBody = JSON.stringify({
-            "lastname": lastname,
-            "firstname": firstname,
+            "last_name": lastname,
+            "first_name": firstname,
             "username": username,
             "email": email,
             "password": password 
@@ -42,7 +42,7 @@ export default class SignUp extends Component {
 
         console.log(requestBody);
 
-        fetch('https://cart-api-66.herokuapp.com/users', {
+        fetch('https://cart-api-66.herokuapp.com/create-user', {
             method: 'POST',
             headers: myHeaders,
             body: requestBody
@@ -63,42 +63,43 @@ export default class SignUp extends Component {
         return (
             this.state.redirect ? 
             <Redirect to={this.state.redirect} /> :
+                
+            
+
+                <div className="col-md-12 flex-column justify-content-center"><h3>Sign Up</h3>
+            <div className="flex-column container col-md-6 border-dark justify-content-center" id="registerBox">
             <form onSubmit={this.handleSubmit}>
-                
-            
-
-                <div className="col-lg-8 offset-lg-2"><h3>Sign Up</h3>
                     <label>First name</label>
-                    <input type="text" className="form-control" placeholder="First name" />
-                </div>
+                    <input name="first_name" type="text" className="form-control" placeholder="First name" />
+                
 
-                <div className="col-lg-8 offset-lg-2">
+                
                     <label>Last name</label>
-                    <input type="text" className="form-control" placeholder="Last name" />
-                </div>
-                <div className="col-lg-8 offset-lg-2">
+                    <input name="last_name" type="text" className="form-control" placeholder="Last name" />
+                
+                
                     <label>UserName</label>
-                    <input type="text" className="form-control" placeholder="UserName" />
-                </div>
+                    <input type="text" name="username" className="form-control" placeholder="UserName" />
+               
 
             
-                <div className="col-lg-8 offset-lg-2">
+                
                     <label>Email address</label>
-                    <input type="email" className="form-control" placeholder="Enter email" />
-                </div>
+                    <input name="email" type="email" className="form-control" placeholder="Enter email" />
                 
-                <div className="col-lg-8 offset-lg-2">
+                
+                
                     <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" />
-                </div>
-                <div className="col-lg-8 offset-lg-2">
-      
-                <a  href="/Products" class="btn btn-primary">submit</a>
-                <p>Already registered <a href="/">sign in?</a></p>
-                    
+                    <input name="password" type="password" className="form-control" placeholder="Enter password" />
                 
-                </div>
+                
+      
+                <button  type="submit" class="btn btn-primary">submit</button>
+                <p>Already registered <Link to="/login">sign in?</Link></p>
+                    
             </form>
+            </div>
+                </div>
         );
     }
 }

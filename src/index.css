@@ -33,3 +33,26 @@ code {
 #buttonId {
   align-self: flex-end;
 }
+#loginCol{
+  max-width: 100%;
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+#loginBox {
+  margin: 5%;
+  border: 5px;
+  border-style: solid;
+  border-color: lightgrey;
+  
+}
+#registerBox {
+  font-style: oblique;
+  align-items: center;
+  border-style: double;
+  border-color: lightgray;
+  border-width: 10px;
+  text-shadow: aqua;
+}
